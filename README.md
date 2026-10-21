@@ -1,7 +1,7 @@
 # Smart Rights Viewer — Native App (React Native / Expo)
 
 แอปมือถือจริง (Android / iOS) ของระบบแสดงสิทธิประโยชน์ภาครัฐเบื้องต้น
-หน้าตาและขั้นตอนเหมือนเว็บเดิม แต่ render ด้วย React Native และเรียก **Backend (Render) กับ DB (Neon) ตัวเดิม** โดยไม่ต้องแก้ฝั่ง server
+หน้าตาและขั้นตอนเหมือนเว็บเดิม แต่ render ด้วย React Native และเรียก **Backend (Render) กับ DB (Neon) ตัวเดิม** 
 
 ## โครงสร้าง
 
@@ -30,11 +30,6 @@ npx expo start
 
 แล้วสแกน QR ด้วยแอป **Expo Go** บนมือถือ (มือถือกับคอมต้องอยู่ Wi-Fi เดียวกัน)
 
-เปลี่ยน URL ของ Backend ได้โดยคัดลอก `.env.example` เป็น `.env` แล้วแก้ค่า `EXPO_PUBLIC_API_BASE`
-(ค่าเริ่มต้นคือ `https://smart-rights-viewer.onrender.com`)
-
-> แอป native **ไม่ต้องเพิ่ม CORS** ที่ Render เพราะ CORS เป็นกฎของเบราว์เซอร์ คำขอจากแอปไม่ผูกกับกฎนี้
-
 ## สร้างไฟล์ APK (ทดสอบ / แจกให้คนลอง)
 
 ใช้ EAS Build (สร้างบนคลาวด์ ไม่ต้องลง Android Studio):
@@ -43,7 +38,7 @@ npx expo start
 npm install -g eas-cli
 npx eas-cli@latest login
 npx eas-cli@latest init
-eas build:configure          # ครั้งแรกครั้งเดียว
+npx eas-cli@latest build:configure          # ครั้งแรกครั้งเดียว
 npx eas-cli@latest build -p android --profile preview
 ```
 

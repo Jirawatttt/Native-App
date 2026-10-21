@@ -1,63 +1,66 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# ============================================================
+# Smart Rights Viewer — Native App (React Native / Expo)
+# ============================================================
 
-# dependencies
+# ── Dependencies ───────────────────────────────────────────
 node_modules/
 
-# Expo
+# ── Expo / Metro ───────────────────────────────────────────
 .expo/
+.expo-shared/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
+# ── Native folders (สร้างอัตโนมัติจาก `expo prebuild` ไม่ต้องเก็บ) ──
+/android
+/ios
+
+# ── 🔐 Signing keys & credentials (ห้าม push เด็ดขาด) ───────
+*.keystore
 *.jks
 *.p8
 *.p12
 *.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
 *.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
-
-example
-
-# generated native folders
-/ios
-/android
-
-# Android / iOS signing & build outputs (ห้าม push)
-*.keystore
-*.jks
-signing-key-info.txt
-*.apk
-*.aab
-*.p8
-*.p12
 *.mobileprovision
 credentials.json
+signing-key-info.txt
+google-services.json
+GoogleService-Info.plist
+
+# ── ไฟล์แอปที่ build เสร็จแล้ว ──────────────────────────────
+*.apk
+*.aab
+*.ipa
+
+# ── Environment ────────────────────────────────────────────
+# (.env.example ยัง push ได้ เพื่อบอกว่าต้องตั้งค่าอะไรบ้าง)
 .env
 .env.*
 !.env.example
+
+# ── Debug logs ─────────────────────────────────────────────
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# ── TypeScript ─────────────────────────────────────────────
+*.tsbuildinfo
 
 # ── Editor / IDE ───────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# ── OS ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Temp / archive ─────────────────────────────────────────
+*.tmp
+*.orig.*
+*.zip
